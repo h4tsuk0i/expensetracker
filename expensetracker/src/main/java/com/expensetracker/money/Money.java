@@ -18,4 +18,12 @@ public class Money {
     public Currency getCurrency(){
         return currency;
     }
+
+    public void setAmount(Number amount) {
+        this.amount = amount;
+    }
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
 }

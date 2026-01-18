@@ -12,6 +12,6 @@ public class DateController {
         if (Period.between(start, end).getDays() > 0){
             return dateRange;
         }else
-        throw new Error("End of date range can't be before the start");
+        throw new Error("Invalid DateRange, length must be >0");
     }
 }
