@@ -1,10 +1,12 @@
 package com.expensetracker.money;
 
+import java.util.Currency;
+
 public class Money {
     public Number amount;
-    public String currency;
+    public Currency currency;
 
-    public Money(Number amount, String currency){
+    public Money(Number amount, Currency currency){
         this.amount = amount;
         this.currency = currency;
     }
@@ -13,15 +15,7 @@ public class Money {
         return amount;
     }
 
-    public void setAmount(Number amount){
-        this.amount = amount;
-    }
-
-    public String getCurrency(){
+    public Currency getCurrency(){
         return currency;
-    }
-
-    public void setCurrency(String type){
-        this.currency = type;
     }
 }
