@@ -1,6 +1,5 @@
 package com.expensetracker.category.controller;
 
-
 import com.expensetracker.category.model.Category;
 
 public class CategoryController {
@@ -10,7 +9,6 @@ public class CategoryController {
         if (name != null && !name.trim().isEmpty()) {
             return new Category(name);
         }else  
-        throw new Error("String needs to be not empty and trimmed");
+        throw new Error("Category needs to be not empty and trimmed");
     }
-
 }

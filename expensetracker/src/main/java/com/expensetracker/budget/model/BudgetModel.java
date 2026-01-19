@@ -1,20 +1,21 @@
 package com.expensetracker.budget.model;
 
+import java.util.ArrayList;
+import java.util.Currency;
+
+import com.expensetracker.money.Money;
+
 public class BudgetModel {
     
 
-    public Number budget;
+    public ArrayList<Money> budget = new ArrayList<>();
+    
 
     public BudgetModel(){
-        budget = 0;
+        budget.add(new Money(0, Currency.getInstance("USD")));
     }
 
-    public Number getBudget() {
+    public ArrayList<Money> getBudget() {
         return budget;
     }
-
-    public void setBudget(Number budget) {
-        this.budget = budget;
-    }
-    
 }

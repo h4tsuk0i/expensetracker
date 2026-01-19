@@ -11,5 +11,4 @@ public class TaskController {
         Task task = new Task(new Money(amount, currency), category, dueDate);
         return task;
     }
-
 }
