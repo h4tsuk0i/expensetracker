@@ -1,39 +1,14 @@
 package com.expensetracker.task.model;
 
-import java.util.Calendar;
+import java.util.ArrayList;
+
+import com.expensetracker.task.Task;
 
 public class TaskModel {
-    
-    public String category;
-    public Number cost;
-    public Calendar dueDate = Calendar.getInstance();
+       
+    public ArrayList<Task> taskList = new ArrayList<>();
 
-    public TaskModel() {
-        this.category = "category";
-        this.cost = 0;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public Number getCost() {
-        return cost;
-    }
-
-    public void setCost(Number cost) {
-        this.cost = cost;
-    }
-
-    public Calendar getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(Calendar dueDate) {
-        this.dueDate = dueDate;
+    public ArrayList<Task> getTaskList() {
+        return taskList;
     }
 }
