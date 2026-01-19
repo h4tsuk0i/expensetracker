@@ -21,7 +21,7 @@ public class BudgetController {
             currencies.add(budget.get(i).getCurrency());
         }
 
-        if(!currencies.contains(money.getCurrency()) || currencies.isEmpty()){ //add to budget if there is no money of that currency in budget or budget is empty
+        if(!currencies.contains(money.getCurrency()) || currencies.isEmpty() && money.getAmount().doubleValue() > 0){ //add to budget if there is no money of that currency in budget or budget is empty and positive
             budget.add(money);
         } else
             addMoneyToExistingCurrency(money);
@@ -31,12 +31,12 @@ public class BudgetController {
         ArrayList<Money> budget = budgetModel.getBudget();
 
         for (int i = 0; i < budget.size(); i++) {
-            if(budget.get(i).getCurrency() == money.getCurrency()){ //check if 
+            if(budget.get(i).getCurrency() == money.getCurrency() && money.getAmount().floatValue() > 0){ //check where Money with same Currency is located and make sure the added amount is not negative
                 budget.get(i).setAmount(budget.get(i).getAmount().doubleValue() + money.getAmount().doubleValue());
                 return;
             }
         }
     }
 
-    
+
 }

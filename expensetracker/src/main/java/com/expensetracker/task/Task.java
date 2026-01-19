@@ -1,6 +1,7 @@
 package com.expensetracker.task;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import com.expensetracker.category.model.Category;
 import com.expensetracker.date.DateRange;
@@ -13,6 +14,7 @@ public class Task {
     public LocalDate dueDate;
     public String name;
     public DateRange dateRange;
+    public UUID uuid;
 
     public Task(Money amount, Category category, DateRange dateRange, LocalDate dueDate, String name) {
         this.amount = amount;
@@ -20,6 +22,7 @@ public class Task {
         this.dueDate = dueDate;
         this.name = name;
         this.dateRange = dateRange;
+        this.uuid = UUID.randomUUID();
     }
 
     public Category getCategory() {
@@ -40,5 +43,9 @@ public class Task {
 
     public DateRange getDateRange() {
         return dateRange;
+    }
+
+    public UUID getUuid() {
+        return uuid;
     }
 }
