@@ -1,22 +1,25 @@
 package com.expensetracker.task;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
+import com.expensetracker.category.model.Category;
 import com.expensetracker.money.Money;
 
 public class Task {
     
-    public String category;
+    public Category category;
     public Money amount;
-    public Calendar dueDate;
+    public LocalDate dueDate;
+    public String name;
 
-    public Task(Money amount, String category, Calendar dueDate) {
+    public Task(Money amount, Category category, LocalDate dueDate, String name) {
         this.amount = amount;
         this.category = category;
         this.dueDate = dueDate;
+        this.name = name;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
@@ -24,7 +27,11 @@ public class Task {
         return amount;
     }
 
-    public Calendar getDueDate() {
+    public LocalDate getDueDate() {
         return dueDate;
+    }
+
+    public String getName() {
+        return name;
     }
 }
