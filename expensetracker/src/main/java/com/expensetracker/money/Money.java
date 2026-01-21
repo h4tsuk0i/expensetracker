@@ -1,17 +1,18 @@
 package com.expensetracker.money;
 
+import java.math.BigDecimal;
 import java.util.Currency;
 
 public class Money {
-    public Number amount;
+    public BigDecimal amount;
     public Currency currency;
 
-    public Money(Number amount, Currency currency){
+    public Money(BigDecimal amount, Currency currency){
         this.amount = amount;
         this.currency = currency;
     }
 
-    public Number getAmount(){
+    public BigDecimal getAmount(){
         return amount;
     }
 
@@ -19,7 +20,7 @@ public class Money {
         return currency;
     }
 
-    public void setAmount(Number amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 

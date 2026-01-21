@@ -20,11 +20,13 @@ public class BudgetController {
         for (int i = 0; i < budget.size(); i++) { //add currencies to temp ArrayList
             currencies.add(budget.get(i).getCurrency());
         }
-
+        System.out.print(currencies);
         if(!currencies.contains(money.getCurrency()) || currencies.isEmpty() && money.getAmount().doubleValue() > 0){ //add to budget if there is no money of that currency in budget or budget is empty and positive
             budget.add(money);
+            System.out.println(budget);
         } else
             addMoneyToExistingCurrency(money);
+            
     }
 
     public void addMoneyToExistingCurrency(Money money){
@@ -32,7 +34,7 @@ public class BudgetController {
 
         for (int i = 0; i < budget.size(); i++) {
             if(budget.get(i).getCurrency() == money.getCurrency() && money.getAmount().floatValue() > 0){ //check where Money with same Currency is located and make sure the added amount is not negative
-                budget.get(i).setAmount(budget.get(i).getAmount().doubleValue() + money.getAmount().doubleValue());
+                budget.get(i).setAmount(budget.get(i).getAmount().add(money.getAmount()));
                 return;
             }
         }

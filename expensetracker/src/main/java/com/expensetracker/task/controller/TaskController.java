@@ -1,4 +1,5 @@
 package com.expensetracker.task.controller;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Currency;
@@ -17,7 +18,7 @@ public class TaskController {
         this.taskModel = taskModel;
     }
     
-    public Task createTask(Number amount, Currency currency, Category category, DateRange dateRange , LocalDate dueDate, String name){
+    public Task createTask(BigDecimal amount, Currency currency, Category category, DateRange dateRange , LocalDate dueDate, String name){
         
         if (amount.doubleValue() > 0 && Period.between(LocalDate.now(), dueDate).getDays() >= 0) {
             Task task = new Task(new Money(amount, currency), category, dateRange ,dueDate, name);
@@ -26,7 +27,7 @@ public class TaskController {
             throw new Error("Money amount needs to be >0 and dueDate needs to be at least today.");  
     }
     
-    public void addTaskToList(Number amount, Currency currency, Category category, DateRange dateRange , LocalDate dueDate, String name){
+    public void addTaskToList(BigDecimal amount, Currency currency, Category category, DateRange dateRange , LocalDate dueDate, String name){
         taskModel.getTaskList().add(createTask(amount, currency, category, dateRange, dueDate, name));
     }
 }
